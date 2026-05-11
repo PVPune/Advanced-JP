@@ -1,0 +1,36 @@
+import java.net.*;
+import java.io.*;
+
+public class RemoteServerConnection {
+
+    public static void main(String[] args) {
+
+        try {
+
+            InetAddress ip = InetAddress.getByName("www.google.com");
+
+            System.out.println("Host Name : " + ip.getHostName());
+
+            System.out.println("IP Address : " + ip.getHostAddress());
+
+            Socket s = new Socket(ip, 80);
+
+            System.out.println("Connection established with remote server");
+
+            s.close();
+
+        } catch(Exception e) {
+
+            System.out.println(e);
+        }
+    }
+}
+
+
+
+output
+
+PS C:\Users\HP\Desktop\AJP practicals\All codes\6 InetAddress> java RemoteServerConnection
+Host Name : www.google.com
+IP Address : 142.251.156.119
+Connection established with remote server
